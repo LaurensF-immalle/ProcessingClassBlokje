@@ -1,26 +1,45 @@
-void setup() {
-size (400,400);
-
+void setup() 
+{
+  size (400,400);
+  frameRate(30);
 }
+
 Blokje b1 = new Blokje(10,10); 
-Blokje b2 = new Blokje(30,10);
-void draw (){
-b1.show();
-b2.show();
+Blokje b2 = new Blokje(30,30);
+
+void draw()
+{
+  background(200);
+  b1.show();
+  b2.show();    
+  
+  if(mousePressed && (mouseButton == LEFT))
+  {
+    b1.update();
+    b2.update();
+  }
 }
-
-
 
 class Blokje
 {
-  float xpos,ypos;
-  Blokje(float X,float Y)
+  float xPos, yPos, breedte, hoogte;
+  Blokje(float X, float Y)
   {
-    xpos = X;
-    ypos = Y;
+    xPos = X;
+    yPos = Y;
+    breedte = 10;
+    hoogte = 10;
   }
+  
+  void update()
+  {
+    xPos += 1;
+    yPos += 1;
+  }
+  
   void show()
-  {
-    rect(xpos,ypos,10,10);
-  }
+    {
+      rect(xPos,yPos,breedte,hoogte);
+    }
+  
 }
