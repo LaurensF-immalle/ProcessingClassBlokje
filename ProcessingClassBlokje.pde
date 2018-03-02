@@ -17,29 +17,9 @@ void draw()
   {
     b1.update();
     b2.update();
-  }
-}
-
-class Blokje
-{
-  float xPos, yPos, breedte, hoogte;
-  Blokje(float X, float Y)
+  }else if(mousePressed && (mouseButton ==RIGHT))
   {
-    xPos = X;
-    yPos = Y;
-    breedte = 10;
-    hoogte = 10;
+    b1.updateOther();
+    b2.updateOther();
   }
-  
-  void update()
-  {
-    xPos += 1;
-    yPos += 1;
-  }
-  
-  void show()
-    {
-      rect(xPos,yPos,breedte,hoogte);
-    }
-  
 }
